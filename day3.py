@@ -53,16 +53,6 @@ class Diagnostic(object):
         result = "".join(result)
         return(int(result, 2))
 
-    def co2(self):
-        keep = []
-        for position, binaries in self.positions.items():
-            if countit(binaries, "0") > countit(binaries, "1"):
-                keep.append([x for x in self.report if str(x[position]) == "1"])
-            elif countit(binaries, "1") > countit(binaries, "0"):
-                keep.append([x for x in self.report if str(x[position]) == "0"])
-            elif countit(binaries, "1") == countit(binaries, "0"):
-                keep.append([x for x in self.report if str(x[position]) == "0"])
-        return(keep)
 
 def oxygen(input):
 
